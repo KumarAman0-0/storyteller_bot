@@ -2,30 +2,43 @@
 
 A premium, interactive web application that reads your PDF files aloud using realistic AI voices. It features a "Smart Mode" that uses Google Gemini to identify characters (Men, Women, Children, Old People) and dynamically switches ElevenLabs voices to match the speaker!
 
+**Now featuring Version 2.0: The Immersion Update!** 🌟
+
 ![Storyteller Bot Interface](https://via.placeholder.com/800x450?text=Storyteller+Bot+Preview)
 *(Replace with actual screenshot if available)*
 
 ## Features
 
-- **📖 Client-Side PDF Parsing**: Drag & drop PDFs to read them instantly. Files are processed locally in your browser for privacy.
-- **🎙️ Dual Speech Engines**:
-  - **Browser Native**: Free, offline text-to-speech using standard system voices.
-  - **ElevenLabs API**: Premium, ultra-realistic human voices with emotion.
-- **🧠 Smart Character Recognition (Beta)**:
+### 🧠 Smart & AI-Powered
+- **Smart Character Recognition (Beta)**:
   - Uses **Google Gemini AI** to analyze the story text.
   - Identifies who is speaking: `Narrator`, `Man`, `Woman`, `Child`, `Old Man`.
   - Automatically switches voices to match the character!
 - **✨ AI Text Cleaning**:
-  - Automatically fixes broken words, OCR errors, and formatting issues.
-  - Removes page numbers and headers for a smooth reading experience.
-- **🎨 Premium Design**: A modern, glassmorphism-inspired UI with smooth animations and dark mode.
+  - Automatically fixes broken words, OCR errors, and format issues.
+
+### 🌟 Immersion (New in v2.0)
+- **🎵 Immersive Soundscapes**: 
+  - The bot detects the **Mood** (Scary, Happy, Nature) and automatically plays ambient background sounds (Rain, Birds, Wind, Drones).
+- **🖼️ AI Scene Illustrations**:
+  - Real-time generated art (using Pollinations.ai) that visualizes the current scene as you listen.
+
+### 🎧 Playback & Export
+- **🎙️ Dual Speech Engines**:
+  - **Browser Native**: Free, offline text-to-speech.
+  - **ElevenLabs API**: Premium, ultra-realistic human voices.
+- **💾 Audiobook Export**:
+  - Download your generated narration as an **MP3 file** to listen on the go!
+
+### 🎨 Design
+- **Premium UI**: Deep space mesh gradients, glassmorphism panels, and smooth animations.
 
 ## Prerequisites
 
 To use the full features of this bot, you will need:
 1.  **Node.js** (v18 or higher) installed on your machine.
 2.  **ElevenLabs API Key** (for premium voices) - [Get it here](https://elevenlabs.io/).
-3.  **Google Gemini API Key** (for smart character recognition) - [Get it here](https://aistudio.google.com/).
+3.  **Google Gemini API Key** (for smart character & mood recognition) - [Get it here](https://aistudio.google.com/).
 
 > *Note: You can still use the bot with just the Free Browser Native voices if you don't have API keys!*
 
@@ -69,14 +82,16 @@ To enable the AI features:
 3.  **Listen**: Click Play!
     - Use the **Globe Icon** to switch languages (English/Hindi) if using standard mode.
     - Use the **Restart Icon** to start over.
+4.  **Save**: Click the **Download Icon** (Floppy Disk) to save the audio output (Export works best with ElevenLabs mode).
 
 ## Tech Stack
 
 - **Frontend**: React, Vite
-- **Styling**: Vanilla CSS (CSS Variables, Glassmorphism)
+- **Styling**: Vanilla CSS (CSS Variables, Glassmorphism, Animations)
 - **PDF Processing**: `pdfjs-dist`
 - **AI/LLM**: Google Gemini API
 - **TTS**: Web Speech API & ElevenLabs API
+- **Image Gen**: Pollinations.ai (Free API)
 - **Icons**: Lucide React
 
 ## License
