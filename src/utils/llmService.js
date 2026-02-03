@@ -11,17 +11,18 @@ export const analyzeTextForCharacters = async (text, apiKey) => {
     const prompt = `
     You are an expert Storyteller AI editor. Your job is to:
     1. CLEAN the text: Fix broken words (e.g. "Amaz- ing" -> "Amazing"), remove page numbers, headers, footers, and random OCR artifacts.
-    2. CORRECT the text: Ensure sentences flow naturally. If there are Hindi words in Roman script, keep them natural.
-    3. SEGMENT the text: Identify who is speaking for each segment.
+    2. CORRECT the text: Ensure sentences flow naturally.
+    3. SEGMENT the text: Identify who is speaking, the MOOD, and a VISUAL DESCRIPTION.
 
-    For each segment, identify the speaker type from this list: 'narrator', 'man', 'woman', 'child', 'old_man', 'old_woman'.
-    If the text is just descriptive/narration, use 'narrator'.
-    If it's dialogue, infer the gender/age from context if possible.
-    
-    Return ONLY a raw JSON array (no markdown formatting) with this structure:
+    For each segment, return:
+    - text: The cleaned text.
+    - speaker: 'narrator', 'man', 'woman', 'child', 'old_man', 'old_woman'.
+    - mood: 'neutral', 'happy', 'sad', 'scary', 'action', 'nature' (rain/forest).
+    - visual_summary: A short, vivid description of the scene for an image generator (e.g., "A dark castle looming in the rain", "Two friends laughing in a sunny park").
+
+    Return ONLY a raw JSON array (no markdown):
     [
-      { "text": "The cleaned, corrected text segment...", "speaker": "narrator" },
-      { "text": "Hello there! How are you?", "speaker": "woman" }
+      { "text": "The sun was shining.", "speaker": "narrator", "mood": "happy", "visual_summary": "Sunny green meadow with blue sky" }
     ]
 
     Raw Text to process:
