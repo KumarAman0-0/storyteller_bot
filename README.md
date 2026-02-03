@@ -1,16 +1,81 @@
-# React + Vite
+# Storyteller Bot 📚✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, interactive web application that reads your PDF files aloud using realistic AI voices. It features a "Smart Mode" that uses Google Gemini to identify characters (Men, Women, Children, Old People) and dynamically switches ElevenLabs voices to match the speaker!
 
-Currently, two official plugins are available:
+![Storyteller Bot Interface](https://via.placeholder.com/800x450?text=Storyteller+Bot+Preview)
+*(Replace with actual screenshot if available)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **📖 Client-Side PDF Parsing**: Drag & drop PDFs to read them instantly. Files are processed locally in your browser for privacy.
+- **🎙️ Dual Speech Engines**:
+  - **Browser Native**: Free, offline text-to-speech using standard system voices.
+  - **ElevenLabs API**: Premium, ultra-realistic human voices with emotion.
+- **🧠 Smart Character Recognition (Beta)**:
+  - Uses **Google Gemini AI** to analyze the story text.
+  - Identifies who is speaking: `Narrator`, `Man`, `Woman`, `Child`, `Old Man`.
+  - Automatically switches voices to match the character!
+- **🎨 Premium Design**: A modern, glassmorphism-inspired UI with smooth animations and dark mode.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Prerequisites
 
-## Expanding the ESLint configuration
+To use the full features of this bot, you will need:
+1.  **Node.js** (v18 or higher) installed on your machine.
+2.  **ElevenLabs API Key** (for premium voices) - [Get it here](https://elevenlabs.io/).
+3.  **Google Gemini API Key** (for smart character recognition) - [Get it here](https://aistudio.google.com/).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+> *Note: You can still use the bot with just the Free Browser Native voices if you don't have API keys!*
+
+## Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/KumarAman0-0/storyteller_bot.git
+    cd storyteller_bot
+    ```
+
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+
+4.  Open your browser to the local URL (usually `http://localhost:5173`).
+
+## Configuration
+
+To enable the AI features:
+
+1.  Click the **Settings (Gear Icon)** in the top right corner of the app.
+2.  **Enable ElevenLabs**:
+    - Check "Use Premium Voices".
+    - Paste your ElevenLabs API Key (`xi-...`).
+3.  **Enable Smart Voices**:
+    - Check "Smart Character Voices (Beta)".
+    - Paste your Google Gemini API Key (`AIza...`).
+4.  Click **Save**.
+
+## Usage
+
+1.  **Upload**: Drag and drop a PDF file (e.g., a novel or storybook) onto the upload zone.
+2.  **Wait for Analysis**: If Smart Mode is on, the bot will briefly analyze the text to find characters.
+3.  **Listen**: Click Play!
+    - Use the **Globe Icon** to switch languages (English/Hindi) if using standard mode.
+    - Use the **Restart Icon** to start over.
+
+## Tech Stack
+
+- **Frontend**: React, Vite
+- **Styling**: Vanilla CSS (CSS Variables, Glassmorphism)
+- **PDF Processing**: `pdfjs-dist`
+- **AI/LLM**: Google Gemini API
+- **TTS**: Web Speech API & ElevenLabs API
+- **Icons**: Lucide React
+
+## License
+
+MIT License. Feel free to fork and modify!
