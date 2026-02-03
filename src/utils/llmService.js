@@ -9,18 +9,22 @@ export const analyzeTextForCharacters = async (text, apiKey) => {
     if (!apiKey) throw new Error('Gemini API Key is missing');
 
     const prompt = `
-    Analyze the following story text. Break it down into segments based on who is speaking.
+    You are an expert Storyteller AI editor. Your job is to:
+    1. CLEAN the text: Fix broken words (e.g. "Amaz- ing" -> "Amazing"), remove page numbers, headers, footers, and random OCR artifacts.
+    2. CORRECT the text: Ensure sentences flow naturally. If there are Hindi words in Roman script, keep them natural.
+    3. SEGMENT the text: Identify who is speaking for each segment.
+
     For each segment, identify the speaker type from this list: 'narrator', 'man', 'woman', 'child', 'old_man', 'old_woman'.
     If the text is just descriptive/narration, use 'narrator'.
-    If it's dialogue, infer the gender/age from context if possible, otherwise default to 'man' or 'woman' based on names/pronouns.
+    If it's dialogue, infer the gender/age from context if possible.
     
     Return ONLY a raw JSON array (no markdown formatting) with this structure:
     [
-      { "text": "The exact text segment...", "speaker": "narrator" },
-      { "text": "Hello there!", "speaker": "woman" }
+      { "text": "The cleaned, corrected text segment...", "speaker": "narrator" },
+      { "text": "Hello there! How are you?", "speaker": "woman" }
     ]
 
-    Text to analyze:
+    Raw Text to process:
     "${text}"
   `;
 

@@ -15,6 +15,9 @@ A premium, interactive web application that reads your PDF files aloud using rea
   - Uses **Google Gemini AI** to analyze the story text.
   - Identifies who is speaking: `Narrator`, `Man`, `Woman`, `Child`, `Old Man`.
   - Automatically switches voices to match the character!
+- **✨ AI Text Cleaning**:
+  - Automatically fixes broken words, OCR errors, and formatting issues.
+  - Removes page numbers and headers for a smooth reading experience.
 - **🎨 Premium Design**: A modern, glassmorphism-inspired UI with smooth animations and dark mode.
 
 ## Prerequisites
